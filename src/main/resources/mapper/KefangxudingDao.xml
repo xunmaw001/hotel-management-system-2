@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.KefangxudingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.KefangxudingEntity" id="kefangxudingMap">
+        <result property="dingdanbianhao" column="dingdanbianhao"/>
+        <result property="kefangmingcheng" column="kefangmingcheng"/>
+        <result property="kefangleixing" column="kefangleixing"/>
+        <result property="kefangtupian" column="kefangtupian"/>
+        <result property="jiudianmingcheng" column="jiudianmingcheng"/>
+        <result property="kefangjiage" column="kefangjiage"/>
+        <result property="xudingtianshu" column="xudingtianshu"/>
+        <result property="zongjiage" column="zongjiage"/>
+        <result property="ruzhushijian" column="ruzhushijian"/>
+        <result property="xudingshijian" column="xudingshijian"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.KefangxudingVO" >
+		SELECT * FROM kefangxuding  kefangxuding         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.KefangxudingVO" >
+		SELECT  kefangxuding.* FROM kefangxuding  kefangxuding
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.KefangxudingView" >
+
+		SELECT  kefangxuding.* FROM kefangxuding  kefangxuding 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.KefangxudingView" >
+		SELECT * FROM kefangxuding  kefangxuding <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
